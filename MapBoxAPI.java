@@ -5,7 +5,7 @@ public class MapBoxAPI implements RoutesService {
     private String API_KEY = "MAPBOX-456";
 
     @Override
-    public Route generateRoute(String initialPoint, String lastPoint, boolean budget, int time, List<String> hobbies) {
+    public Route generateRoute(String initialPoint, String lastPoint, float budget, int time, List<String> hobbies) {
         System.out.println("MapBoxAPI generating route...");
         List<Place> places = new ArrayList<>();
         places.add(new Place("MapBox Restaurant", "Restaurant", 0, 0, 8));

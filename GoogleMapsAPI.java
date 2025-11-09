@@ -5,7 +5,7 @@ public class GoogleMapsAPI implements RoutesService {
     private String API_KEY = "GOOGLE-123";
 
     @Override
-    public Route generateRoute(String initialPoint, String lastPoint, boolean budget, int time, List<String> hobbies) {
+    public Route generateRoute(String initialPoint, String lastPoint, float budget, int time, List<String> hobbies) {
         System.out.println("GoogleMapsAPI generating route...");
         List<Place> places = new ArrayList<>();
         places.add(new Place("Google Café", "Restaurant", 0, 0, 10));

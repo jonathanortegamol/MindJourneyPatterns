@@ -28,7 +28,7 @@ public class RoutesProxy implements RoutesService {
     }
 
     @Override
-    public Route generateRoute(String initialPoint, String lastPoint, boolean budget, int time, List<String> hobbies) {
+    public Route generateRoute(String initialPoint, String lastPoint, float budget, int time, List<String> hobbies) {
         String key = initialPoint + "-" + lastPoint;
         if (cache.containsKey(key)) {
             System.out.println("Returning cached route...");
@@ -44,7 +44,7 @@ public class RoutesProxy implements RoutesService {
                 cache.put(key, route);
                 return route;
             } catch (Exception e) {
-                log("Error with " + getActiveService().getServiceName() + ": " + e.getMessage());
+                log("Error with " + getServiceName() + ": " + e.getMessage());
                 incrementFailure(getActiveService().getServiceName());
                 switchToNextService();
             }
